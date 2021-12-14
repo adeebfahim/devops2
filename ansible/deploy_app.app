@@ -13,3 +13,9 @@
 
     - name: "supervisorctl restart {{program_name}}"
       command: "supervisorctl restart {{program_name}}"
+    - name: copy code to dif repo
+            ansible.builtin.git:
+                    repo: https://github.com/gourteacher/devops2.git 
+                    dest: /srv/long_running_python_process
+                    clone: yes
+                    update: yes
